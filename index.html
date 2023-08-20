@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADMIN</title>
+    <link rel="stylesheet" href="/src/styles/index.css" >
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  </head>
+  <body>
+    <main x-data="{ login: '', password: '', done: false, data: {} }">
+      <div class="container" x-show="!done">
+        <img src="/src/assets/logo.png" class="logo">
+        <div>
+          <input x-model="login" placeholder="login"> 
+          <input x-model="password" placeholder="password"> 
+          <div>
+            <button x-on:click="done=true; data = (await axios.post('http://localhost/api/contact/requests', {login, password})).data">Login</button>
+          </div>
+        
+        </div>
+      </div>
+      <div x-show="done">
+        <div>
+          <template x-for="req in data">
+            <div class="req" >
+              <h1 x-html="req.name"></h1>
+              <div class="flex">
+                <div>
+                  <h2>Przedmiot</h2>
+                  <div x-html="req.subject"></div>
+                </div>
+                
+                <div>
+                  <h2>Miejsce</h2>
+                  <div x-html="req.place"></div>
+                </div>
+
+                <div>
+                  <h2>Poziom</h2>
+                  <div x-html="req.level"></div>
+                </div>
+                
+              </div>
+              
+                  
+              <div x-html="req.text" class="text"></div>
+                
+              <h2>Kontakt</h2>
+              <div x-html="req.contact"></div>
+            </div>
+          </template>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

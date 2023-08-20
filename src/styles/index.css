@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  color: #28353a;
+}
+
+.hide {
+  display: none;
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+img.logo {
+  height: 200px;
+}
+
+input,
+button,
+select,
+textarea {
+  font-family: "Rubik", sans-serif;
+  border: none;
+  background-color: #e3e3e3;
+  color: theme(dark);
+  padding: 5px 10px;
+  margin: 5px;
+  border-radius: 5px;
+}
+
+button {
+  background-color: #00647d;
+  color: #e3e3e3;
+  cursor: pointer;
+}
+
+.req {
+  background-color: #eee;
+  padding: 10px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  max-width: 800px;
+}
+
+.req h1 {
+  margin: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 30px;
+}
+
+.req h2 {
+  margin: 0px;
+  font-weight: 500;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #00647d;
+}
+
+.req .text {
+  margin: 10px 0;
+}
+
+.req .flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 100px;
+  margin-top: 5px;
+}
