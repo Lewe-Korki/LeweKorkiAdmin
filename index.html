@@ -16,9 +16,8 @@
           <input x-model="login" placeholder="login"> 
           <input x-model="password" placeholder="password"> 
           <div>
-            <button x-on:click="done=true; data = (await axios.post('http://localhost/api/contact/requests', {login, password})).data">Login</button>
+            <button x-on:click="done=true; data = (await axios.post('//lewekorki.pl/api/contact/requests', {login, password})).data">Login</button>
           </div>
-        
         </div>
       </div>
       <div x-show="done">
@@ -31,22 +30,16 @@
                   <h2>Przedmiot</h2>
                   <div x-html="req.subject"></div>
                 </div>
-                
                 <div>
                   <h2>Miejsce</h2>
                   <div x-html="req.place"></div>
                 </div>
-
                 <div>
                   <h2>Poziom</h2>
                   <div x-html="req.level"></div>
                 </div>
-                
               </div>
-              
-                  
               <div x-html="req.text" class="text"></div>
-                
               <h2>Kontakt</h2>
               <div x-html="req.contact"></div>
             </div>
